@@ -657,9 +657,58 @@ Lệnh thực hiện:
 ```
 mv report.txt /home/an/backup/report_final.txt
 ```
+**Các tham số an toàn quan trọng**
 
+-i (Interactive): Hỏi xác nhận trước khi ghi đè nếu ở đích đến đã có một file trùng tên. Điều này cực kỳ quan trọng để tránh mất dữ liệu ngoài ý muốn.
+mv -i file.txt /destination/
 
-  
+-n (No-clobber): Ngăn chặn việc ghi đè lên file đã tồn tại. Nếu file đích đã có, lệnh sẽ không thực hiện gì cả.
+
+-f (Force): Ngược lại với -i, lệnh này sẽ ghi đè ngay lập tức mà không đưa ra bất kỳ cảnh báo nào.
+
+## - Cut Command:
+   ### + Lấy ký tự thứ `<n>`.
+   ### + Lấy từ ký tự `<n>` trở về sau.
+   ### + Lấy đến ký tự thứ `<n>`.
+
+## - Dig Command:
+   ### + Kiểm tra record A, MX, NS.
+   ### + Kiểm tra record A, MX, NS với custom DNS.
+
+## - Tar/Zip/Unzip Command:
+   ###  + Nén/giải nén `tar.gz`.
+   ### + Nén/giải nén `.zip`.
+
+- Mount/Umount Command:
+    + Thêm ổ cứng `sdb` ~ 5gb.
+    + Kiểm tra số lượng ổ cứng.
+    + Mount vào `/mnt/test`.
+    + Umount `/mnt/test`.
+
+- Symbolic Links, Hard Links Command:
+    + Định nghĩa Sym Link.
+    + Định nghĩa Hard Link.
+    + Ví dụ về Sym Link và Hard Link.
+
+- Ls Command:
+    + Liệt kê file/thư mục.
+    + Liệt kê file/thư mục và thuộc tính.
+    + Show file ẩn.
+
+- Ps Command:
+    + Show tiến trình.
+    + Kill tiến trình.
+
+- Top Command:
+    + Kiểm tra tài nguyên CPU.
+    + Giải thích các thông số.
+
+- Free Command:
+    + Giải thích các thông số về RAM.
+
+- Df Command:
+    + Xem dung lượng disk.
+    + Phân vùng `/` là gì.  
 
 
 
