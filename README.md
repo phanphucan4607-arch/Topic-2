@@ -225,6 +225,7 @@ Bước 3: Kiểm tra kết nối
 
 ### + Kết nối bằng port custom.
 Bước 1:  Kiểm tra và Mở Port (Firewall)
+
 <img width="506" height="115" alt="image" src="https://github.com/user-attachments/assets/c0d1f27d-b1c3-4fd7-8c8d-6ab6e6fd0c85" />
 
 Bước 2: kiểm tra port đã hoạt động chưa
