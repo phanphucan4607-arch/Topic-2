@@ -475,13 +475,15 @@ Lệnh: netstat -unl
    <img width="666" height="467" alt="image" src="https://github.com/user-attachments/assets/6de5a43f-a08b-4596-bca6-73b376b75e4f" />
 
    ### + Theo thứ tự giảm dần.
-   sort -r filename.txt.
+   sort -r filename.txt.'
+   
    <img width="666" height="467" alt="image" src="https://github.com/user-attachments/assets/52bce2d3-0ed6-4229-b98b-b67fcf8c01d9" />
    
    ### + Theo column.
    Sử dụng sort -k [số_cột] filename.txt.
 
     Ví dụ: sort -k 2 data.txt (sắp xếp dựa trên nội dung cột thứ 2).
+    
 <img width="666" height="467" alt="image" src="https://github.com/user-attachments/assets/33d01fd7-24ca-43ab-97b3-1c25f0439456" />
 
 
