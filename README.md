@@ -9,16 +9,7 @@ Tại Vietnix, việc xác thực chứng chỉ SSL (đặc biệt là dòng DV 
   + Xác thực qua Email (Email-based): Sử dụng email quản trị tên miền (như admin@domain.com) để xác nhận.
   + Xác thực qua File (HTTP/HTTPS): Tải file xác thực do Vietnix cung cấp lên thư mục gốc của website.
 
-
-`
  - CSR file dùng để làm gì?
-File CSR (Certificate Signing Request) tại Vietnix là một đoạn mã hóa chứa thông tin tên miền và doanh nghiệp, được tạo ra từ server để gửi cho nhà cung cấp chứng chỉ SSL. Mục đích chính là dùng để đăng ký chứng chỉ SSL nhằm xác thực website và mã hóa dữ liệu truyền tải, đảm bảo an toàn thông tin. 
-Tác dụng chi tiết của CSR file:
-
-   + Đăng ký SSL: Là thành phần bắt buộc khi mua hoặc gia hạn các loại chứng chỉ SSL (như Comodo, DigiCert, Sectigo...) để xác thực quyền sở hữu tên miền.
-   + Mã hóa thông tin: Chứa các thông tin quan trọng như tên miền (Common Name), tổ chức, địa phương, quốc gia... để nhà cung cấp SSL xác nhận.
-   + Tạo Private Key: Khi tạo CSR, hệ thống thường tạo ra một cặp khóa gồm CSR và Private Key. Private Key này được giữ bí mật trên máy chủ để cài đặt SSL hoàn tất.
-   + Bảo mật website: Giúp website chuyển sang giao thức HTTPS, tạo kết nối an toàn, bảo vệ dữ liệu người dùng.
 
  - Gen file CSR và request SSL cho domain `tech.training.vietnix.tech` bằng OpenSSL Trên Linux.
 Bước 1: Tạo Private Key (.key)
@@ -157,3 +148,4 @@ Chức năng và Tầm quan trọng
     PTR: "IP gửi có hợp lệ không?"
 
 **DNS**
+Là quá trình phân giải tên miền, giúp chuyển đổi các tiên 
