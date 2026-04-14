@@ -733,13 +733,10 @@ dig google.com NS
 Lệnh thực hiện:
 ```
 dig @8.8.8.8 google.com A
-```
-```
 dig @1.1.1.1 google.com MX
-```
-```
 dig @8.8.4.4 google.com NS
 ```
+
 ## - Tar/Zip/Unzip Command:
    ###  + Nén/giải nén `tar.gz`.
  **Nén thư mục/tệp tin:**
@@ -766,7 +763,7 @@ unzip data.zip
 
 ## - Mount/Umount Command:
 Việc gắn kết (Mount) là quá trình làm cho hệ thống tập tin trên các thiết bị lưu trữ (như ổ cứng, USB) có thể truy cập được từ cây thư mục của Linux.
-  
+
    ### + Thêm ổ cứng `sdb` ~ 5gb.
 Sau khi hệ thống nhận diện được ổ cứng vật lý, ta cần khởi tạo nó để có thể lưu trữ dữ liệu.
     Bước 1: Phân vùng ổ đĩa (Partitioning)
