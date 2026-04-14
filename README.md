@@ -1,5 +1,6 @@
-```text
-1.**` SSL (Secure Sockets Layer)
+
+**1.**` SSL (Secure Sockets Layer)
+**```
 **- SSL là gì?
 Là giao thức bảo mật internet được phát triển bởi Netscape vào năm 1995, nhằm mã hóa dữ liệu truyền giữa máy chủ và trình duyệt để đảm bảo tính riêng tư, xác thực và toàn vẹn thông tin.
 
@@ -105,7 +106,7 @@ Là một phần mở rộng cảu doamin chính, được tạo ra bằng cách
 Là tính năng của phần mềm máy chủ Web (Apache, nginx) cho phép một máy chủ vật lý duy nhất lưu trữ và vận hành đồng thời cùng website hoặc tên miền khác nhau.
 
 
-3**Mail Server**
+3. **Mail Server**
 ```
 - Tìm hiểu MX Record.
 là loại ghi quan trọng giúp định tuyến email đến máy chủ thư (mail serve) của tên miền. Nó cho phép thư điện tử thay mặt doamin, thường bao gồm tên máy chủ thư và mức độ ưu tiên
