@@ -445,11 +445,43 @@ tracert google.com
 
 ## - Netstat Command:
    ### + Hiển thị các socket đang listen.
+   Chỉ lọc ra các dịch vụ đang ở trạng thái "LISTEN" (đang chờ kết nối), thay vì hiển thị toàn bộ các kết nối đang thiết lập.
+   Lệnh: netstat -l
+   <img width="928" height="722" alt="image" src="https://github.com/user-attachments/assets/331b2687-5074-4a97-8034-acfb47857ac8" />
+
    ### + Không resolve hostname.
+   Yêu cầu hệ thống hiển thị địa chỉ dưới dạng số IP thuần túy thay vì cố gắng phân giải ra tên miền (như localhost hay google.com). Việc này giúp lệnh chạy nhanh hơn vì không phải chờ truy vấn DNS.
    ### + Không resolve portname.
+   Hiển thị số cổng (như 22, 80, 443) thay vì tên dịch vụ (như ssh, http, https). Khi kết hợp, tham số -n sẽ áp dụng cho cả IP và Port.
    ### + Display process name/PID.
+   Hiển thị tên chương trình và ID tiến trình (Process ID) đang chiếm giữ cổng đó. Lưu ý: Bạn cần chạy quyền sudo hoặc root để thấy được thông tin này của các tiến trình hệ thống.
    ### + Chỉ hiển thị socket TCP.
+   Lọc danh sách và chỉ hiển thị các kết nối sử dụng giao thức TCP.
+Lệnh: netstat -tnl
+<img width="774" height="298" alt="image" src="https://github.com/user-attachments/assets/7f075e5c-6711-4193-bb63-9d2c1c1478e6" />
+
    ### + Chỉ hiển thị socket UDP.
+   Lọc danh sách và chỉ hiển thị các kết nối sử dụng giao thức UDP (thường dùng cho các dịch vụ như DNS, DHCP).
+Lệnh: netstat -unl
+<img width="774" height="298" alt="image" src="https://github.com/user-attachments/assets/540665e2-a995-40ca-bd03-8ce00b9db13d" />
+
+## - Sort Command:
+ dùng để sắp xếp dòng văn bản. Mặc định là tăng dần theo bảng chữ cái/ASCII.
+   ###  + Theo thứ tự tăng dần.
+   Theo thứ tự tăng dần (mặc định): sort filename.txt.
+   <img width="666" height="467" alt="image" src="https://github.com/user-attachments/assets/6de5a43f-a08b-4596-bca6-73b376b75e4f" />
+
+   ### + Theo thứ tự giảm dần.
+   sort -r filename.txt.
+   <img width="666" height="467" alt="image" src="https://github.com/user-attachments/assets/52bce2d3-0ed6-4229-b98b-b67fcf8c01d9" />
+   
+   ### + Theo column.
+   Sử dụng sort -k [số_cột] filename.txt.
+
+    Ví dụ: sort -k 2 data.txt (sắp xếp dựa trên nội dung cột thứ 2).
+    <img width="666" height="467" alt="image" src="https://github.com/user-attachments/assets/f41b95cc-13e3-4a48-8a35-013f426d1e58" />
+    
+
 
 
 
