@@ -1,13 +1,16 @@
 **SSL**
 `
+## SSL (Secure Sockets Layer)
+
+```text
 - SSL là gì?
 Là giao thức bảo mật internet được phát triển bởi Netscape vào năm 1995, nhằm mã hóa dữ liệu truyền giữa máy chủ và trình duyệt để đảm bảo tính riêng tư, xác thực và toàn vẹn thông tin.
 
 - Có bao nhiêu cách xác thực SSL?
-Tại Vietnix, việc xác thực chứng chỉ SSL (đặc biệt là dòng DV - Domain Validation phổ biến) thường bao gồm 3 phương thức chính để xác minh quyền sở hữu tên miền:
+Tại Vietnix, việc xác thực chứng chỉ SSL (đặc biệt là dòng DV - Domain Validation phổ biến) thường bao gồm 3 phương thức chính:
   + Xác thực qua DNS (CNAME): Thêm bản ghi CNAME vào cấu hình DNS của tên miền.
-  + Xác thực qua Email (Email-based): Sử dụng email quản trị tên miền (như admin@domain.com) để xác nhận.
-  + Xác thực qua File (HTTP/HTTPS): Tải file xác thực do Vietnix cung cấp lên thư mục gốc của website.
+  + Xác thực qua Email: Sử dụng email quản trị tên miền (admin@domain.com) để xác nhận.
+  + Xác thực qua File: Tải file xác thực do Vietnix cung cấp lên thư mục gốc của website.
 
  - CSR file dùng để làm gì?
 
