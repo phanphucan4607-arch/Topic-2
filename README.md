@@ -83,7 +83,7 @@ De chuyen doi thanh cong, ban can chuan bi du 3 thanh phan sau:
 Neu ban dang thao tac tren Linux, hay dung lenh sau de gop file nhanh chong va chuyen nghiep:
 
 ```bash
-openssl pkcs12 -export -out certificate.pfx -inkey private.key -in certificate.crt -certfile ca-bundle.crt
+openssl pkcs12 -export -out certificate.pfx -inkey private.key -in certificate.crt -certfile ca-bundle.crt```
 
 
 2.**Doamin**
