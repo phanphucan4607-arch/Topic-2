@@ -204,6 +204,41 @@ Giai thich cac thong so trong ket qua lenh Ping:
 tiến hành ssh bằng passwork: ssh username@ip_address
 <img width="819" height="311" alt="image" src="https://github.com/user-attachments/assets/da5d53c5-dd75-4b41-aa48-e50ad54293a0" />
 
+## + SSH bằng Key
+Bước 1: Tạo cặp khóa trên máy cá nhân (Local).
+Gõ lệnh: ssh-keygen -t rsa -b 2048
+- Hệ thống sẽ hỏi nơi lưu file (thường là ~/.ssh/id_rsa), bạn cứ nhấn Enter.
+- Hệ thống hỏi Passphrase (mật khẩu cho file khóa), có thể nhấn Enter để bỏ qua.
+  <img width="807" height="492" alt="image" src="https://github.com/user-attachments/assets/622b116f-9d5e-4aa0-a7c5-6930cef7d6e8" />
+  
+  Hình trên bạn có thể thấy server có ghi đường dẫn lưu file private key (id_rsa) và file public key (id_rsa.pub)
+  Tiếp theo ta cần thay đổi tên file “id_rsa.pub” thành “authorized_keys” bằng lệnh
+mv /root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
+
+Bước 2: Tiếp theo ta cần thay đổi tên file “id_rsa.pub” thành “authorized_keys” bằng lệnh
+mv /root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
+
+Bước 3: Kiểm tra kết nối 
+ Lệnh: ssh root@localhost
+ <img width="784" height="520" alt="image" src="https://github.com/user-attachments/assets/04513ff1-e07f-440a-a838-1fab9f484a20" />
+
+## + Kết nối bằng port custom.
+Bước 1:  Kiểm tra và Mở Port (Firewall)
+<img width="506" height="115" alt="image" src="https://github.com/user-attachments/assets/c0d1f27d-b1c3-4fd7-8c8d-6ab6e6fd0c85" />
+
+Bước 2: kiểm tra port đã hoạt động chưa
+Kiểm tra port đang mở: Sử dụng lệnh ss -tulpn hoặc netstat -tulpn để xác nhận port đã hoạt động
+<img width="925" height="434" alt="image" src="https://github.com/user-attachments/assets/e9c9cac4-4a7c-4887-b1b2-5033aef4d8f2" />
+
+Bước 3: kiểm tra
+<img width="925" height="434" alt="image" src="https://github.com/user-attachments/assets/416a8c23-a9f2-4412-aede-1dab837360b8" />
+
+
+  
+
+
+
+
 
 
 
