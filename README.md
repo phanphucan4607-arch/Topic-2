@@ -54,8 +54,9 @@ Các đặc điểm và vai trò của Private Key SSL:
 Khi cài đặt SSL, file Private Key (.key) sẽ hoạt động cùng với file Certificate (.crt) để xác thực và mã hóa dữ liệu trên website
 
 - PFX file là gì? Cách chuyển từ CRT sang PFX.
+
 #### 1. File PFX la gi?
-* **Dinh nghia:** **PFX** (hay **PKCS #12**) la dinh dang tep dung de luu tru toan bo cac thanh phan cua mot chung chi bao mat (bao gom: Server Certificate, Private Key va CA Bundle) vao trong **mot tep duy nhat**.
+Dinh nghia:** **PFX** (hay **PKCS #12**) la dinh dang tep dung de luu tru toan bo cac thanh phan cua mot chung chi bao mat (bao gom: Server Certificate, Private Key va CA Bundle) vao trong **mot tep duy nhat**.
 * **Muc dich:** Thuong duoc su dung de cai dat SSL tren cac may chu **Windows (IIS)**, Azure, hoac dung de di chuyen chung chi giua cac he thong khac nhau mot cach tien loi.
 * **Bao mat:** Tep PFX luon yeu cau mot** mat khau bao ve (Password) de dam bao an toan tuyet doi cho Private Key ben trong.
 
