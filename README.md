@@ -1,7 +1,5 @@
-`### SSL (Secure Sockets Layer)
-
-```text
-- SSL là gì?
+1.**` SSL (Secure Sockets Layer)
+**- SSL là gì?
 Là giao thức bảo mật internet được phát triển bởi Netscape vào năm 1995, nhằm mã hóa dữ liệu truyền giữa máy chủ và trình duyệt để đảm bảo tính riêng tư, xác thực và toàn vẹn thông tin.
 
 - Có bao nhiêu cách xác thực SSL?
@@ -87,7 +85,7 @@ Neu ban dang thao tac tren Linux, hay dung lenh sau de gop file nhanh chong va c
 openssl pkcs12 -export -out certificate.pfx -inkey private.key -in certificate.crt -certfile ca-bundle.crt
 
 
-###**Doamin**
+2.**Doamin**
 ```text
 - Domain là gì?
 Domain (tên miền) là địa chỉ định danh duy nhất của một website trên internet, giúp người dùng truy cập trang web dễ dàng thay vì nhập dãy số IP phức tạp.
@@ -107,7 +105,7 @@ Là một phần mở rộng cảu doamin chính, được tạo ra bằng cách
 - Virtual Hosts là gì?
 Là tính năng của phần mềm máy chủ Web (Apache, nginx) cho phép một máy chủ vật lý duy nhất lưu trữ và vận hành đồng thời cùng website hoặc tên miền khác nhau.
 
-**Mail Server**
+3**Mail Server**
 - Tìm hiểu MX Record.
 là loại ghi quan trọng giúp định tuyến email đến máy chủ thư (mail serve) của tên miền. Nó cho phép thư điện tử thay mặt doamin, thường bao gồm tên máy chủ thư và mức độ ưu tiên
  Các thành phần chính MX record
@@ -147,5 +145,5 @@ Chức năng và Tầm quan trọng
     DKIM: "Nội dung có bị giả mạo không?"
     PTR: "IP gửi có hợp lệ không?"
 
-**DNS**
-Là quá trình phân giải tên miền, giúp chuyển đổi các tiên 
+4. ****DNS**
+**Là quá trình phân giải tên miền, giúp chuyển đổi các tiên 
