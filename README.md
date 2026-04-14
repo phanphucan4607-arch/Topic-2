@@ -992,10 +992,10 @@ df -h
    ### + Phân vùng `/` là gì.  
 Trong Linux, phân vùng / được gọi là Root Directory (Thư mục gốc). Đây là điểm bắt đầu của toàn bộ hệ thống tệp tin.
 
-    Tất cả đều nằm ở đây: Khác với Windows phân chia ổ C:, D:, E:, trong Linux, mọi thư mục (/etc, /bin, /home, /var...) và mọi ổ cứng khác khi được gắn vào máy đều phải nằm "dưới" thư mục gốc /.
-
-    Tầm quan trọng: Nếu phân vùng / bị đầy (100%), hệ điều hành sẽ gặp lỗi nghiêm trọng: không thể khởi động, không thể đăng nhập hoặc các dịch vụ (Web, Database) sẽ ngừng hoạt động vì không thể ghi tệp tạm.
-
+    Tất cả điều nằm ở đây: Khác với windows phân chia ổ C: D: E:, trong linux, mọi thư mục (/etc, /bin, /home, /var...) và mọi ổ cứng khác khi được gắn vào máy đều phải nằm "dưới" thư mục góc /.
+    Tầm quan trọng: Nếu phân vùng / bị đàyf (100%), hẹ điều hành sẽ gặp lỗi nghiêm trọng: không thể khởi động, không thể đăng nhập hoặc các dịch vụ (web, Database) sẽ ngừng hoày động vì không thể ghi tiệp tạm.
+    
+    
 
 
 
