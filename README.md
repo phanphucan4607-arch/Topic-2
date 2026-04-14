@@ -797,30 +797,114 @@ Trước khi thực hiện bất kỳ thao tác nào, chúng ta cần liệt kê
 
 
 
-- Symbolic Links, Hard Links Command:
-    + Định nghĩa Sym Link.
-    + Định nghĩa Hard Link.
-    + Ví dụ về Sym Link và Hard Link.
+## - Symbolic Links, Hard Links Command:
+   ## Symbolic Links và Hard Links
 
-- Ls Command:
-    + Liệt kê file/thư mục.
-    + Liệt kê file/thư mục và thuộc tính.
-    + Show file ẩn.
+---
 
-- Ps Command:
-    + Show tiến trình.
-    + Kill tiến trình.
+### Định nghĩa Symbolic Link (Symlink)
 
-- Top Command:
-    + Kiểm tra tài nguyên CPU.
-    + Giải thích các thông số.
+Symbolic Link (liên kết mềm) là một file đặc biệt trỏ đến một file hoặc thư mục khác thông qua đường dẫn.
 
-- Free Command:
-    + Giải thích các thông số về RAM.
+Đặc điểm:
 
-- Df Command:
-    + Xem dung lượng disk.
-    + Phân vùng `/` là gì.  
+* Hoạt động giống shortcut trong Windows
+* Có thể trỏ đến file hoặc thư mục
+* Nếu file gốc bị xóa → link sẽ bị lỗi (broken link)
+* Có thể trỏ sang phân vùng khác
+
+---
+
+### Định nghĩa Hard Link
+
+Hard Link là một liên kết trực tiếp đến dữ liệu của file trên ổ đĩa.
+
+Đặc điểm:
+
+* Trỏ trực tiếp đến inode của file
+* Không thể phân biệt file gốc và hard link
+* Nếu xóa file gốc → file vẫn tồn tại nếu còn hard link
+* Không tạo được cho thư mục
+* Không dùng được khác phân vùng
+
+---
+
+### Ví dụ Symbolic Link
+
+**Tạo symlink:**
+
+```bash id="1x2n0k"
+ln -s file_goc.txt symlink.txt
+```
+
+Kiểm tra:
+
+```bash id="0xw4n6"
+ls -l
+```
+
+Kết quả:
+
+```bash id="h7b2qk"
+symlink.txt -> file_goc.txt
+```
+
+---
+
+### Ví dụ Hard Link
+
+Tạo hard link:
+
+```bash id="7d3m5p"
+ln file_goc.txt hardlink.txt
+```
+
+Kiểm tra inode:
+
+```bash id="q2z9lx"
+ls -li
+```
+
+ Hai file sẽ có cùng inode
+
+### So sánh nhanh
+
+| Tiêu chí | Symbolic Link (Soft Link) | Hard Link |
+| :--- | :---: | :---: |
+| **Kiểu liên kết** | Theo đường dẫn (Path) | Theo mã Inode |
+| **Dùng cho folder** | Có | Không |
+| **Khác phân vùng** | Có | Không |
+| **Xóa file gốc** | Link bị lỗi (Broken) | Vẫn dùng bình thường |
+| **Lệnh thực hiện** | `ln -s nguồn đích` | `ln nguồn đích` |
+
+### Kết luận
+
+* Symbolic Link linh hoạt, dễ dùng
+* Hard Link an toàn hơn vì không phụ thuộc file gốc
+
+## - Ls Command:
+   | Tham số | Lệnh thực thi | Ý nghĩa |
+| :--- | :--- | :--- |
+| **Cơ bản** | `ls` | Liệt kê tên file và thư mục |
+| **Chi tiết** | `ls -l` | Hiển thị thuộc tính, quyền hạn và kích thước |
+| **Tất cả** | `ls -a` | Hiển thị cả các file ẩn (bắt đầu bằng dấu `.`) |
+| **Kết hợp** | `ls -la` | Hiển thị chi tiết tất cả các file bao gồm cả file ẩn |
+| **Dễ đọc** | `ls -lh` | Hiển thị kích thước file theo đơn vị dễ đọc (KB, MB, GB) |
+
+## - Ps Command:
+   ### + Show tiến trình.
+   ## + Kill tiến trình.
+
+## - Top Command:
+   ### + Kiểm tra tài nguyên CPU.
+   ### + Giải thích các thông số.
+
+## - Free Command:
+   ### + Giải thích các thông số về RAM.
+
+## - Df Command:
+   ### + Xem dung lượng disk.
+   ### + Phân vùng `/` là gì.  
 
 
 
