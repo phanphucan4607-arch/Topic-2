@@ -182,5 +182,8 @@ là hệ thống phân giải tên miền, giúp chuyển đổi các tên miề
 - Ping vietnix.vn và giải thích kết quả lệnh `ping` và `hping3`.
 <img width="696" height="269" alt="image" src="https://github.com/user-attachments/assets/f969870b-dbbe-473e-9ea3-f13669746eaf" />
 
+<img width="801" height="310" alt="image" src="https://github.com/user-attachments/assets/024ec60a-d29c-4d1d-93be-f646ab49fd73" />
+
+
 
 
