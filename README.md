@@ -617,11 +617,13 @@ cp file1.txt file2.txt /path/to/folder/
    ### + Copy folder.
  Để sao chép thư mục, bạn bắt buộc phải dùng tùy chọn -r (recursive - đệ quy) hoặc -a (archive - giữ nguyên thuộc tính). 
 
-    Sao chép thư mục và toàn bộ nội dung bên trong
+Sao chép thư mục và toàn bộ nội dung bên trong
+
 ```
     cp -r folder_goc/ folder_dich/
 ```
-    Sao chép thư mục và giữ nguyên quyền, thời gian (thường dùng để backup):
+Sao chép thư mục và giữ nguyên quyền, thời gian (thường dùng để backup):
+
 ```
     cp -a folder_goc/ folder_dich/
 ```
