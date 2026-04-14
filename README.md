@@ -667,14 +667,79 @@ mv -i file.txt /destination/
 -f (Force): Ngược lại với -i, lệnh này sẽ ghi đè ngay lập tức mà không đưa ra bất kỳ cảnh báo nào.
 
 ## - Cut Command:
+Lệnh cut được sử dụng để cắt các phần cụ thể từ mỗi dòng của tập tin hoặc kết quả đầu ra của một lệnh khác. Khi làm việc với ký tự, chúng ta sử dụng tham số -c
    ### + Lấy ký tự thứ `<n>`.
+   Chỉ trích xuất duy nhất một ký tự tại vị trí thứ n (tính từ 1).
+Lệnh thực hiện:
+```
+cut -c 1 rceport.txt
+```
+<img width="562" height="172" alt="image" src="https://github.com/user-attachments/assets/c77d2f80-3fb3-4e6b-bf91-b2052b0f1184" />
+==> kết quả sẽ trả về chữ đầu tiên ở mỗi dòng 
+  
    ### + Lấy từ ký tự `<n>` trở về sau.
+   Lệnh này giúp loại bỏ một số lượng ký tự nhất định ở đầu dòng và giữ lại toàn bộ phần nội dung còn lại cho đến cuối dòng.
+
+   ```
+  cut -c n- <tên_file>
+```
+Ví dụ thực tế với file của bạn:
+Giả sử dòng văn bản là dw (2 ký tự).
+Nếu bạn chạy: cut -c 2- report.txt
+Hệ thống sẽ bỏ ký tự thứ 1, và lấy từ ký tự thứ 2 trở đi. Kết quả trả về sẽ là chữ
+<img width="562" height="172" alt="image" src="https://github.com/user-attachments/assets/ac648dd8-50ef-484c-be89-400cc8027578" />
+
    ### + Lấy đến ký tự thứ `<n>`.
+   Lệnh này giúp bạn trích xuất một chuỗi ký tự tính từ vị trí đầu tiên (vị trí 1) cho đến điểm dừng là ký tự thứ n mà bạn mong muốn.
+   (Lưu ý: Dấu gạch ngang phải đặt trước con số).
+
+Ví dụ thực tế với file của bạn:
+Giả sử dòng văn bản trong file là LinuxServer.
+Nếu bạn muốn lấy 5 ký tự đầu tiên, bạn chạy:
+```
+cut -c -5 report.txt
+```
+<img width="562" height="172" alt="image" src="https://github.com/user-attachments/assets/968f9390-1472-42ea-8152-cc8af1b659eb" />
+
 
 ## - Dig Command:
+Lệnh dig là công cụ mạnh mẽ nhất trên Linux để vấn tin các máy chủ DNS. Nó giúp bạn kiểm tra các bản ghi (records) của tên miền để xác định cấu hình mạng hoặc khắc phục sự cố phân giải tên miền.
    ### + Kiểm tra record A, MX, NS.
-   ### + Kiểm tra record A, MX, NS với custom DNS.
+   Mỗi loại bản ghi mang một thông tin khác nhau về tên miền:
+    Record A (Address): Trả về địa chỉ IP của tên miền.
+    Record MX (Mail Exchange): Trả về máy chủ xử lý email của tên miền đó.
+    Record NS (Name Server): Trả về các máy chủ quản lý DNS của tên miền.
 
+  Lệnh thực hiện:
+```
+dig google.com A
+```
+<img width="789" height="631" alt="image" src="https://github.com/user-attachments/assets/6f8073a7-e42b-4678-8c93-9a212c881483" />
+```
+dig google.com MX
+```
+<img width="741" height="530" alt="image" src="https://github.com/user-attachments/assets/c2efcb7f-ce9b-4d30-905a-0d5cb4e28255" />
+
+
+```
+dig google.com NS
+```
+<img width="741" height="530" alt="image" src="https://github.com/user-attachments/assets/bb6343f0-533a-4c69-aca7-7967348506e8" />
+
+
+### + Kiểm tra record A, MX, NS với custom DNS.
+Đôi khi, DNS của nhà mạng có thể bị cập nhật chậm hoặc bị chặn. Để kiểm tra xem bản ghi thực tế trên một máy chủ DNS cụ thể (như Google 8.8.8.8 hoặc Cloudflare 1.1.1.1) là gì, bạn sử dụng ký hiệu
+
+Lệnh thực hiện:
+```
+dig @8.8.8.8 google.com A
+```
+```
+dig @1.1.1.1 google.com MX
+```
+```
+dig @8.8.4.4 google.com NS
+```
 ## - Tar/Zip/Unzip Command:
    ###  + Nén/giải nén `tar.gz`.
    ### + Nén/giải nén `.zip`.
