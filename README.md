@@ -83,7 +83,8 @@ De chuyen doi thanh cong, ban can chuan bi du 3 thanh phan sau:
 Neu ban dang thao tac tren Linux, hay dung lenh sau de gop file nhanh chong va chuyen nghiep:
 
 ```bash
-openssl pkcs12 -export -out certificate.pfx -inkey private.key -in certificate.crt -certfile ca-bundle.crt```
+openssl pkcs12 -export -out certificate.pfx -inkey private.key -in certificate.crt -certfile ca-bundle.crt
+```
 
 
 2.**Doamin**
@@ -105,7 +106,9 @@ Là một phần mở rộng cảu doamin chính, được tạo ra bằng cách
 - Virtual Hosts là gì?
 Là tính năng của phần mềm máy chủ Web (Apache, nginx) cho phép một máy chủ vật lý duy nhất lưu trữ và vận hành đồng thời cùng website hoặc tên miền khác nhau.
 
+
 3**Mail Server**
+```
 - Tìm hiểu MX Record.
 là loại ghi quan trọng giúp định tuyến email đến máy chủ thư (mail serve) của tên miền. Nó cho phép thư điện tử thay mặt doamin, thường bao gồm tên máy chủ thư và mức độ ưu tiên
  Các thành phần chính MX record
@@ -144,8 +147,10 @@ Chức năng và Tầm quan trọng
     SPF: "Ai được phép gửi?"
     DKIM: "Nội dung có bị giả mạo không?"
     PTR: "IP gửi có hợp lệ không?"
+```
 
 4. ****DNS**
+   ```
 là hệ thống phân giải tên miền, giúp chuyển đổi các tên miền thân thiện (như vietnix.vn) thành địa chỉ IP máy tính hiểu được
 
 - Cac loai record DNS (Ban ghi DNS) pho bien:
@@ -174,3 +179,4 @@ là hệ thống phân giải tên miền, giúp chuyển đổi các tên miề
     + Hoi Authoritative Server: De lay dia chi IP cuoi cung cua ban ghi A record.
 + Buoc 3: Luu vao bo nho dem (DNS Caching): Sau khi tim thay dia chi IP, ket qua se duoc luu lai tai DNS Resolver va tren may tinh cua nguoi dung (Local Cache). Thoi gian luu tru nay phu thuoc vao chi so TTL (Time To Live) trong cau hinh ban ghi.
 + Buoc 4: Tra ket qua ve trinh duyet: DNS Resolver gui dia chi IP ve cho trinh duyet. Trinh duyet su dung IP nay de thiet lap ket noi TCP/IP voi Web Server va hien thi noi dung website.
+```
