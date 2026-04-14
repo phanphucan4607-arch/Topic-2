@@ -179,11 +179,23 @@ là hệ thống phân giải tên miền, giúp chuyển đổi các tên miề
 + Buoc 4: Tra ket qua ve trinh duyet: DNS Resolver gui dia chi IP ve cho trinh duyet. Trinh duyet su dung IP nay de thiet lap ket noi TCP/IP voi Web Server va hien thi noi dung website.
 ```
 # **Linux Command Line**
-- Ping vietnix.vn và giải thích kết quả lệnh `ping` và `hping3`.
+## - Ping vietnix.vn và giải thích kết quả lệnh `ping` và `hping3`.
 <img width="696" height="269" alt="image" src="https://github.com/user-attachments/assets/f969870b-dbbe-473e-9ea3-f13669746eaf" />
 
 <img width="801" height="310" alt="image" src="https://github.com/user-attachments/assets/024ec60a-d29c-4d1d-93be-f646ab49fd73" />
 
+Giai thich cac thong so trong ket qua lenh Ping:
+
++ ttl (Time To Live): 
+  - Nghia la "Vong doi" cua mot goi tin. Day la mot gia tri so nguyen (thuong bat dau tu 64, 128 hoac 255).
+  - Moi khi goi tin di qua mot thiet bi mang (nhu Router), chi so nay se bi tru di 1 (goi la mot "hop").
+  - Muc dich: Ngan chan viec goi tin bi lap vo han tren mang. Neu ttl giam ve bang 0 ma chua den duoc dich, goi tin se bi huy va thong bao cho nguoi gui.
+
++ time (ms):
+  - Nghia la "Thoi gian phan hoi" (Latency hoac RTT - Round Trip Time).
+  - Day la khoang thoi gian tinh tu luc may tinh ban gui goi tin ICMP di cho den khi nhan duoc goi tin phan hoi tu may chu quay ve.
+  - Don vi tinh: Miligiay (ms). 
+  - Y nghia: Chi so nay cang thap thi toc do ket noi mang den may chu cang nhanh va on dinh.
 
 
 
