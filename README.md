@@ -716,10 +716,10 @@ dig google.com A
 ```
 <img width="789" height="631" alt="image" src="https://github.com/user-attachments/assets/6f8073a7-e42b-4678-8c93-9a212c881483" />
 ```
+
 dig google.com MX
 ```
 <img width="741" height="530" alt="image" src="https://github.com/user-attachments/assets/c2efcb7f-ce9b-4d30-905a-0d5cb4e28255" />
-
 
 ```
 dig google.com NS
@@ -742,13 +742,62 @@ dig @8.8.4.4 google.com NS
 ```
 ## - Tar/Zip/Unzip Command:
    ###  + Nén/giải nén `tar.gz`.
-   ### + Nén/giải nén `.zip`.
+ **Nén thư mục/tệp tin:**
+Sử dụng lệnh tar với các tham số -cvzf.
+tar -cvzf archive.tar.gz folder_name/
+(Trong đó: c là create, v là verbose (hiện tiến trình), z là gzip, f là file).
 
-- Mount/Umount Command:
-    + Thêm ổ cứng `sdb` ~ 5gb.
-    + Kiểm tra số lượng ổ cứng.
-    + Mount vào `/mnt/test`.
-    + Umount `/mnt/test`.
+**Giải nén:**
+Sử dụng tham số -xvzf.
+tar -xvzf archive.tar.gz
+(Trong đó: x là extract).
+
+   
+   ### + Nén/giải nén `.zip`.
+   Định dạng .zip có tính tương thích cao, dễ dàng mở được trên cả Windows và macOS mà không cần cài thêm phần mềm.
+
+**Nén thư mục/tệp tin:**
+Sử dụng lệnh zip. Nếu nén thư mục, bạn bắt buộc phải có tham số -r (recursive).
+zip -r data.zip folder_name/
+
+**Giải nén:**
+Sử dụng lệnh unzip.
+unzip data.zip
+
+## - Mount/Umount Command:
+Việc gắn kết (Mount) là quá trình làm cho hệ thống tập tin trên các thiết bị lưu trữ (như ổ cứng, USB) có thể truy cập được từ cây thư mục của Linux.
+  
+   ### + Thêm ổ cứng `sdb` ~ 5gb.
+Sau khi hệ thống nhận diện được ổ cứng vật lý, ta cần khởi tạo nó để có thể lưu trữ dữ liệu.
+    Bước 1: Phân vùng ổ đĩa (Partitioning)
+    fdisk /dev/sdb (Sau đó nhấn n để tạo mới, p cho phân vùng chính, và w để lưu).
+    Bước 2: Định dạng hệ thống tập tin (Formatting)
+    Để Linux đọc được, ta định dạng theo chuẩn ext4:
+    mkfs.ext4 /dev/sdb1
+   
+   ### + Kiểm tra số lượng ổ cứng.
+Trước khi thực hiện bất kỳ thao tác nào, chúng ta cần liệt kê các thiết bị lưu trữ đang kết nối với máy chủ.
+    Lệnh thực hiện: lsblk
+    Chi tiết: Lệnh này hiển thị danh sách các thiết bị khối (block devices) theo dạng cây, giúp xác định rõ tên ổ cứng (như sdb) và các phân vùng đi kèm.
+   
+   ### + Mount vào `/mnt/test`.
+Để truy cập và ghi dữ liệu vào ổ cứng mới (ví dụ /dev/sdb), chúng ta cần thực hiện "Mount" nó vào một thư mục rỗng.
+    Tạo điểm gắn kết (Mount Point): mkdir -p /mnt/test
+    Thực hiện lệnh: mount /dev/sdb /mnt/test
+    Kiểm tra kết quả: Sử dụng lệnh df -h để xác nhận ổ cứng đã được gắn thành công vào thư mục /mnt/test.
+   
+   ### + Umount `/mnt/test`.
+   Khi cần tháo ổ đĩa hoặc bảo trì, chúng ta thực hiện ngắt kết nối để đảm bảo an toàn cho dữ liệu.
+    Lệnh thực hiện: umount /mnt/test
+    Lưu ý: Nếu hệ thống báo lỗi target is busy, hãy đảm bảo rằng không có cửa sổ terminal nào đang đứng trong thư mục /mnt/test hoặc có ứng dụng nào đang mở file tại đó.
+    | Mục tiêu | Lệnh thực thi | Ý nghĩa |
+| :--- | :--- | :--- |
+| **Liệt kê ổ đĩa** | `lsblk` | Xem danh sách tất cả ổ cứng đang có. |
+| **Gắn kết** | `mount /dev/sdb /mnt/test` | Kết nối ổ `sdb` vào thư mục `/mnt/test`. |
+| **Ngắt kết nối** | `umount /mnt/test` | Tháo ổ đĩa ra khỏi hệ thống tập tin. |
+| **Xem trạng thái** | `df -h` | Kiểm tra dung lượng và các điểm đã mount. |
+
+
 
 - Symbolic Links, Hard Links Command:
     + Định nghĩa Sym Link.
