@@ -196,6 +196,19 @@ Giai thich cac thong so trong ket qua lenh Ping:
   - Day la khoang thoi gian tinh tu luc may tinh ban gui goi tin ICMP di cho den khi nhan duoc goi tin phan hoi tu may chu quay ve.
   - Don vi tinh: Miligiay (ms). 
   - Y nghia: Chi so nay cang thap thi toc do ket noi mang den may chu cang nhanh va on dinh.
+## - SSH Command:
+ + Kết nối bằng Password:
+ cài đặt openssh: sudo apt update && sudo apt install openssh-server -y
+ Enable + start SSH
+ <img width="819" height="311" alt="image" src="https://github.com/user-attachments/assets/767adc30-310c-4b67-8b00-cdb756be211c" />
+tiến hành ssh bằng passwork: ssh username@ip_address
+<img width="819" height="311" alt="image" src="https://github.com/user-attachments/assets/da5d53c5-dd75-4b41-aa48-e50ad54293a0" />
+
+
+
+
+   
+   
 
 
 
