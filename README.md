@@ -577,11 +577,54 @@ thực hiện xóa và nó báo không có quyền
 find . -type f -name "*.log"
 ```
 Tham số -type f xác định đối tượng tìm kiếm là tập tin (file).
+
    ### + Tìm folder tên `abc`.
+   
+  Tìm kiếm thư mục có tên chính xác là abc.
+```
+find . -type d -name "abc"
+```
+Tham số -type d xác định đối tượng tìm kiếm là thư mục (directory)
+   
    ### + Tìm file tên `abc`.
-   ### + Tìm file `abc` và đặt 
+   ```
+find . -type f -name "abc"
+ ```
+   ### + Tìm file `abc` và đặt quyền read only.
+   Lệnh find có thể kết hợp tham số -exec để xử lý ngay lập tức kết quả tìm thấy.
+Ví dụ: Tìm file abc và đặt quyền thực thi (755) cho nó:
+```
+find . -type f -name "abc" -exec chmod 755 {} \;
+```
+**Giải thích ký hiệu đặc biệt trong -exec**
+{}: Là ký hiệu đại diện cho từng file mà lệnh find tìm thấy.
+;: Là ký hiệu báo hiệu kết thúc câu lệnh thực thi đi kèm.
 
+## - Cp Command:
+   ### + Copy file.
+   Sao chép file tại cùng thư mục (đổi tên):
+```
+cp file_goc.txt file_dich.txt
+```
+Sao chép file sang thư mục khác:
+```
+cp file_goc.txt /path/to/folder/
+```
+Sao chép nhiều file vào một thư mục:
+```
+cp file1.txt file2.txt /path/to/folder/
+```
+   ### + Copy folder.
+ Để sao chép thư mục, bạn bắt buộc phải dùng tùy chọn -r (recursive - đệ quy) hoặc -a (archive - giữ nguyên thuộc tính). 
 
+    Sao chép thư mục và toàn bộ nội dung bên trong
+```
+    cp -r folder_goc/ folder_dich/
+```
+    Sao chép thư mục và giữ nguyên quyền, thời gian (thường dùng để backup):
+```
+    cp -a folder_goc/ folder_dich/
+```
 
 
 
