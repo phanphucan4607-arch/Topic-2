@@ -230,9 +230,11 @@ Bước 1:  Kiểm tra và Mở Port (Firewall)
 
 Bước 2: kiểm tra port đã hoạt động chưa
 Kiểm tra port đang mở: Sử dụng lệnh ss -tulpn hoặc netstat -tulpn để xác nhận port đã hoạt động
+
 <img width="925" height="434" alt="image" src="https://github.com/user-attachments/assets/e9c9cac4-4a7c-4887-b1b2-5033aef4d8f2" />
 
 Bước 3: kiểm tra
+
 <img width="925" height="434" alt="image" src="https://github.com/user-attachments/assets/416a8c23-a9f2-4412-aede-1dab837360b8" />
 
  ## SCP Command: 
