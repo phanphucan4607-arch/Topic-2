@@ -1,6 +1,4 @@
-**SSL**
-`
-## SSL (Secure Sockets Layer)
+`### SSL (Secure Sockets Layer)
 
 ```text
 - SSL là gì?
@@ -89,9 +87,7 @@ Neu ban dang thao tac tren Linux, hay dung lenh sau de gop file nhanh chong va c
 openssl pkcs12 -export -out certificate.pfx -inkey private.key -in certificate.crt -certfile ca-bundle.crt
 
 
-
-
-**Doamin**
+###**Doamin**
 - Domain là gì?
 Domain (tên miền) là địa chỉ định danh duy nhất của một website trên internet, giúp người dùng truy cập trang web dễ dàng thay vì nhập dãy số IP phức tạp.
 
