@@ -146,4 +146,31 @@ Chức năng và Tầm quan trọng
     PTR: "IP gửi có hợp lệ không?"
 
 4. ****DNS**
-**Là quá trình phân giải tên miền, giúp chuyển đổi các tiên 
+là hệ thống phân giải tên miền, giúp chuyển đổi các tên miền thân thiện (như vietnix.vn) thành địa chỉ IP máy tính hiểu được
+
+- Cac loai record DNS (Ban ghi DNS) pho bien:
+
++ A Record (Address): Dung de tro ten mien ve mot dia chi IPv4 (vi du: 103.200.23.xx). Day la ban ghi quan trong nhat de website hoat dong.
++ AAAA Record: Tuong tu nhu A Record nhung dung de tro ten mien ve dia chi IPv6.
++ CNAME Record (Canonical Name): Cho phep mot ten mien khac lam bi danh (alias) for ten mien chinh (vi du: tro www.vietnix.vn ve vietnix.vn).
++ MX Record (Mail Exchange): Xac dinh may chu se chiu trach nhiem nhan email cua ten mien do.
++ TXT Record (Text): Dung de ghi chu hoac cung cap thong tin xac thuc cho cac dich vu ben ngoai (pho bien nhat la dung cho SPF va DKIM de bao mat email).
++ NS Record (Name Server): Chi dinh may chu DNS nao dang quan ly cac ban ghi cua ten mien.
++ PTR Record (Pointer): Con goi la DNS nguoc, dung de phan giai dia chi IP ve ten mien (nguoc lai voi A Record).
++ SOA Record (Start of Authority): Chua cac thong tin quan trong ve khu vuc DNS (DNS Zone) nhu email nguoi quan tri, thoi gian lam moi (refresh time)...
+
+- Nguyen tac lam viec cua DNS (Domain Name System):
++ Buoc 1: Truy van tu trinh duyet (Query): Khi ban nhap mot ten mien (vi du: vietnix.vn) vao trinh duyet, may tinh se kiem tra trong bo nho dem (Cache) truoc. Neu khong co, no se gui yeu cau den DNS Resolver (thuong la cua ISP hoac Google 8.8.8.8).
++ Buoc 2: Truy van Root Server: DNS Resolver se hoi Root Name Server de biet may chu quan ly duoi mo rong (.vn, .com, .net...). Root Server se tra ve dia chi cua TLD Name Server tuong ung.
++ Buoc 3: Truy van TLD Server: Resolver tiep tuc gui yeu cau den may chu TLD (Top-Level Domain). Tai day, TLD Server se cung cap dia chi cua Authoritative Name Server - noi thuc su quan ly ban ghi cua ten mien vietnix.vn.
++ Buoc 4: Truy van Authoritative Server: Day la buoc cuoi cung. Authoritative Server se tra ve dia chi IP chinh xac cua website (vi du: 103.200.23.xx) cho Resolver.
++ Buoc 5: Tra ket qua va Caching: Resolver tra dia chi IP ve cho trinh duyet de tai website, dong thoi luu dia chi IP nay vao bo nho dem (Cache) trong mot khoang thoi gian (TTL) de su dung cho lan truy cap sau ma khong can lap lai quy trinh tren.
+
+- Cach phan giai dia chi DNS:
++ Buoc 1: Truy van de quy (Recursive Query): Day la buoc dau tien khi may tinh cua nguoi dung gui yeu cau den DNS Resolver (thuong la IP 8.8.8.8 hoac IP cua nha mang). Resolver co trach nhiem di tim bang duoc dia chi IP cho nguoi dung.
++ Buoc 2: Truy van tuong tac (Iterative Query): DNS Resolver se thay mat nguoi dung thuc hien cac truy van lan luot qua cac cap may chu:
+    + Hoi Root Server: De biet may chu quan ly duoi ten mien (vi du: .vn).
+    + Hoi TLD Server: De biet may chu dang quan ly ten mien cu the (vi du: vietnix.vn).
+    + Hoi Authoritative Server: De lay dia chi IP cuoi cung cua ban ghi A record.
++ Buoc 3: Luu vao bo nho dem (DNS Caching): Sau khi tim thay dia chi IP, ket qua se duoc luu lai tai DNS Resolver va tren may tinh cua nguoi dung (Local Cache). Thoi gian luu tru nay phu thuoc vao chi so TTL (Time To Live) trong cau hinh ban ghi.
++ Buoc 4: Tra ket qua ve trinh duyet: DNS Resolver gui dia chi IP ve cho trinh duyet. Trinh duyet su dung IP nay de thiet lap ket noi TCP/IP voi Web Server va hien thi noi dung website.
