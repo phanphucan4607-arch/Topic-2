@@ -1,4 +1,5 @@
 1.**` SSL (Secure Sockets Layer)
+```text
 **- SSL là gì?
 Là giao thức bảo mật internet được phát triển bởi Netscape vào năm 1995, nhằm mã hóa dữ liệu truyền giữa máy chủ và trình duyệt để đảm bảo tính riêng tư, xác thực và toàn vẹn thông tin.
 
