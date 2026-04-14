@@ -568,9 +568,11 @@ chattr -i report.txt
 Kiểm tra xác nhận bằng lsattr
 lsattr report.txt
   <img width="554" height="126" alt="image" src="https://github.com/user-attachments/assets/492305a2-52ee-4a3c-ac07-eeb408dab40e" />
+
 ==> ------i--- có nghĩa là file được bảo vệ
 
 thực hiện xóa và nó báo không có quyền 
+
 <img width="554" height="126" alt="image" src="https://github.com/user-attachments/assets/213cdf61-c60a-47f3-b57a-4c8947998e26" />
 
 
