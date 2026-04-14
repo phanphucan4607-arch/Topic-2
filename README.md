@@ -893,11 +893,71 @@ ls -li
 
 ## - Ps Command:
    ### + Show tiến trình.
+
+   Khi một tiến trình bị treo hoặc bạn muốn tắt nó, bạn sẽ dùng lệnh kill kết hợp với PID lấy từ lệnh ps ở trên.
+    Tắt tiến trình một cách "lịch sự":
+    ệnh ps giúp bạn chụp lại trạng thái các tiến trình đang chạy tại thời điểm thực hiện lệnh.
+
+    Hiển thị tất cả tiến trình đang chạy trên hệ thống
+    ps -aux
+        -a: Hiển thị tiến trình của tất cả người dùng.
+        -u: Hiển thị chi tiết (User, CPU, RAM...).
+        -x: Hiển thị các tiến trình không gắn với terminal (chạy ngầm).
+    
    ## + Kill tiến trình.
+kill -9 <PID>
+Khi một tiến trình bị treo hoặc bạn muốn tắt nó, bạn sẽ dùng lệnh kill kết hợp với PID lấy từ lệnh ps ở trên
 
 ## - Top Command:
    ### + Kiểm tra tài nguyên CPU.
+   Kiểm tra kiến truc CPU trong linux với lscpu: $ lscpu
+
+   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/38ce1ee9-918f-44ff-93b5-7134b1fbb422" />
+   
    ### + Giải thích các thông số.
+1. Thông số cốt lõi (Core Architecture)
+
+    Architecture: x86_64: Đây là kiến trúc 64-bit phổ biến nhất hiện nay, cho phép hệ thống quản lý lượng RAM lớn (vượt xa mức 4GB của kiến trúc 32-bit).
+
+    CPU op-mode(s): 32-bit, 64-bit: CPU này có khả năng tương thích ngược, chạy được cả các phần mềm cũ 32-bit và phần mềm hiện đại 64-bit.
+
+    Address sizes: 48 bits physical, 48 bits virtual: Khả năng đánh địa chỉ bộ nhớ. Với 48-bit physical, về lý thuyết CPU có thể nhận tới 256 TB RAM vật lý.
+
+2. Cấu trúc phân lớp (Topology)
+
+Đây là phần quan trọng nhất để hiểu cách CPU vận hành:
+
+    CPU(s): 12: Tổng số đơn vị xử lý mà hệ điều hành nhìn thấy (nhân logic).
+
+    Thread(s) per core: 2: Mỗi nhân vật lý có 2 luồng xử lý (SMT - Simultaneous Multithreading).
+
+    Core(s) per socket: 6: Có 6 nhân vật lý nằm trên một đế chip.
+
+    Socket(s): 1: Máy chỉ có 1 ổ cắm CPU (thường là laptop hoặc PC phổ thông).
+
+        Công thức tính: 1 Socket×6 Cores×2 Threads=12 CPUs.
+
+3. Tốc độ và Hiệu năng
+
+    CPU max MHz: 4390.4141: Tốc độ tối đa khi ép xung tự động (Turbo Boost) là khoảng 4.4 GHz.
+
+    CPU min MHz: 423.1730: Khi máy rảnh, nó sẽ giảm xung xuống cực thấp (khoảng 423 MHz) để tiết kiệm pin và giảm nhiệt.
+
+    BogoMIPS: 4591.73: Một chỉ số đo tốc độ tính toán sơ bộ của Linux (thường dùng để tham khảo độ "trâu" của chip khi khởi động).
+
+4. Bộ nhớ đệm (Caches - Sum of all)
+
+Phần này cho thấy tổng dung lượng bộ nhớ đệm trên toàn bộ chip:
+
+    L1d / L1i (192 KiB): Bộ nhớ đệm cấp 1 (dữ liệu và lệnh). Đây là bộ nhớ nhanh nhất, nằm sát nhân CPU nhất.
+
+    L2 (3 MiB): Tốc độ trung bình, dung lượng lớn hơn L1.
+
+    L3 (16 MiB): Bộ nhớ đệm dùng chung cho tất cả các nhân. L3 lớn giúp xử lý đa nhiệm và chơi game mượt mà hơn.
+
+5. Ảo hóa (Virtualization)
+
+    Virtualization: AMD-V: CPU này hỗ trợ công nghệ ảo hóa phần cứng của AMD. Nếu bạn dùng VMware, VirtualBox hoặc Docker, tính năng này bắt buộc phải có để đạt hiệu suất cao.
 
 ## - Free Command:
    ### + Giải thích các thông số về RAM.
