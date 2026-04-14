@@ -83,7 +83,7 @@ De chuyen doi thanh cong, ban can chuan bi du 3 thanh phan sau:
 Neu ban dang thao tac tren Linux, hay dung lenh sau de gop file nhanh chong va chuyen nghiep:
 openssl pkcs12 -export -out certificate.pfx -inkey private.key -in certificate.crt -certfile ca-bundle.crt
 ```
-
+```
 2.**Doamin**
 - Domain là gì?
 Domain (tên miền) là địa chỉ định danh duy nhất của một website trên internet, giúp người dùng truy cập trang web dễ dàng thay vì nhập dãy số IP phức tạp.
@@ -103,6 +103,7 @@ Là một phần mở rộng cảu doamin chính, được tạo ra bằng cách
 - Virtual Hosts là gì?
 Là tính năng của phần mềm máy chủ Web (Apache, nginx) cho phép một máy chủ vật lý duy nhất lưu trữ và vận hành đồng thời cùng website hoặc tên miền khác nhau.
 
+```
 ```
 3. **Mail Server**
 
@@ -520,12 +521,66 @@ Các tùy chọn phổ biến khác (theo Vietnix):
    Sử dụng tùy chọn -m.
     Cú pháp: wc -m tên_tệp
     Ví dụ: wc -m file.txt (Hiển thị tổng số ký tự, bao gồm cả khoảng trắng và ký tự xuống dòng).
+
 <img width="363" height="183" alt="image" src="https://github.com/user-attachments/assets/a1f921ca-04da-4b60-8893-f98dca256c09" />
 
+
 ## - Chmod, Chown, Chattr Command:
+Lệnh này thay đổi quyền (read-r=4, write-w=2, execute-x=1) cho User (u), Group (g), Others (o)
+
    ### + Phân quyền bằng số và chữ.
+   **Phân quyền bằng số** (Numeric Method): Dùng 3 chữ số đại diện cho u, g, o.
+
+    chmod 755 file.txt: User có toàn quyền (7=4+2+1), Group/Others chỉ được đọc và thực thi (5=4+0+1).
+    chmod 644 file.txt: User đọc/ghi (6), Group/Others chỉ đọc (4).
+   chmod 777 file.txt: Tất cả mọi người có toàn quyền (rất nguy hiểm).
+   **Phân quyền bằng chữ** (Symbolic Method):
+
+    chmod u+x file.txt: Thêm quyền thực thi cho User.
+    chmod g-w file.txt: Xóa quyền ghi của Group.
+    chmod o+r file.txt: Thêm quyền đọc cho Others.
+
+Tham số -R: Thay đổi quyền cho toàn bộ thư mục và tệp con bên trong
+
    ### + Đổi owner user/group.
+Lệnh dùng để thay đổi người sở hữu (user) và nhóm (group) của file/folder. 
+    Chỉ đổi user: chown newuser file.txt
+    Đổi cả user và group: chown newuser:newgroup file.txt
+    Đổi owner cho toàn bộ thư mục (recursive): chown -R user:group /path/to/folder
+    
+   <img width="594" height="312" alt="image" src="https://github.com/user-attachments/assets/bd37bee4-a80b-4f82-8a96-f66e9aea9733" />
+
    ### + Set Immutable Attribute.
+  Lệnh chattr dùng để thay đổi các thuộc tính mở rộng của tệp, đặc biệt là +i (immutable) để bảo vệ tệp 
+  Đây là mức độ bảo mật cao hơn cả phân quyền thông thường. Khi một file được thiết lập thuộc tính này, không ai (kể cả root) có thể xóa, đổi tên hoặc sửa đổi nội dung của nó.
+  **Lệnh thiết lập (Set)**
+Sử dụng tham số +i để kích hoạt tính năng bất biến.
+chattr +i report.txt
+
+**Lệnh gỡ bỏ (Unset)**
+Khi muốn chỉnh sửa lại file, bạn phải gỡ bỏ thuộc tính này bằng tham số -i.
+chattr -i report.txt
+Kiểm tra xác nhận bằng lsattr
+lsattr report.txt
+  <img width="554" height="126" alt="image" src="https://github.com/user-attachments/assets/492305a2-52ee-4a3c-ac07-eeb408dab40e" />
+==> ------i--- có nghĩa là file được bảo vệ
+
+thực hiện xóa và nó báo không có quyền 
+<img width="554" height="126" alt="image" src="https://github.com/user-attachments/assets/213cdf61-c60a-47f3-b57a-4c8947998e26" />
+
+
+ ## - Find Command:
+ Câu lệnh find trên Linux để thực hiện các yêu cầu của bạn, được tối ưu hóa cho 
+   ### + Tìm file đuôi `.log`.
+   Tìm kiếm tất cả các tập tin có phần mở rộng là .log trong thư mục hiện tại và các thư mục con.
+```
+find . -type f -name "*.log"
+```
+Tham số -type f xác định đối tượng tìm kiếm là tập tin (file).
+   ### + Tìm folder tên `abc`.
+   ### + Tìm file tên `abc`.
+   ### + Tìm file `abc` và đặt 
+
 
 
 
