@@ -962,10 +962,39 @@ Phần này cho thấy tổng dung lượng bộ nhớ đệm trên toàn bộ c
 ## - Free Command:
    ### + Giải thích các thông số về RAM.
 
+   <img width="885" height="159" alt="image" src="https://github.com/user-attachments/assets/e562f0b2-da53-4a05-886d-ba914bb5ee3b" />
+ Phân tích số của bạn
+total: 23,937,784 KB ≈ ~22.8 GB RAM
+used: ~3.7 GB
+free: ~13.4 GB
+buff/cache: ~5.4 GB
+available: ~19.1 GB
+
+ Điều này có nghĩa:
+
+Máy bạn đang dùng rất ít RAM (~3.7GB)
+Linux tận dụng ~5.4GB làm cache để tăng tốc
+Nhưng vẫn còn ~19GB có thể dùng ngay khi cần
+
+→ Hệ thống đang rất dư RAM, không có vấn đề gì.
+
 ## - Df Command:
    ### + Xem dung lượng disk.
-   ### + Phân vùng `/` là gì.  
+dùng lệnh df để kiểm tra dung lượng đĩa cứng ssax sử dụng và còn trống của các phân vùng trên hệ thống
 
+```
+df -h
+```
+
+<img width="873" height="345" alt="image" src="https://github.com/user-attachments/assets/5887c62a-0dc0-4cd3-8b07-b743092b7b97" />
+
+  
+   ### + Phân vùng `/` là gì.  
+Trong Linux, phân vùng / được gọi là Root Directory (Thư mục gốc). Đây là điểm bắt đầu của toàn bộ hệ thống tệp tin.
+
+    Tất cả đều nằm ở đây: Khác với Windows phân chia ổ C:, D:, E:, trong Linux, mọi thư mục (/etc, /bin, /home, /var...) và mọi ổ cứng khác khi được gắn vào máy đều phải nằm "dưới" thư mục gốc /.
+
+    Tầm quan trọng: Nếu phân vùng / bị đầy (100%), hệ điều hành sẽ gặp lỗi nghiêm trọng: không thể khởi động, không thể đăng nhập hoặc các dịch vụ (Web, Database) sẽ ngừng hoạt động vì không thể ghi tệp tạm.
 
 
 
