@@ -66,7 +66,6 @@ De chuyen doi thanh cong, ban can chuan bi du 3 thanh phan sau:
 2.  **Private Key file:** `.key` (Khoa rieng tao ra cung luc voi CSR).
 3.  **CA Bundle file:** `.ca-bundle` hoac `.crt` (Chung chi trung gian).
 
----
 
 #### **Cach 1: Su dung cong cu chuyen doi Online**
 1. Truy cap cac trang web nhu *SSL Shopper* hoac *Sectigo SSL Converter*.
@@ -78,7 +77,7 @@ De chuyen doi thanh cong, ban can chuan bi du 3 thanh phan sau:
 4. Nhap mat khau cho file PFX.
 5. Nhan **Convert** va tai file `.pfx` ve may.
 
-#### **Cach 2: Su dung lenh OpenSSL (Khuyen dung)**
+ **Cach 2: Su dung lenh OpenSSL (Khuyen dung)**
 Neu ban dang thao tac tren Linux, hay dung lenh sau de gop file nhanh chong va chuyen nghiep:
 
 ```bash
@@ -86,7 +85,6 @@ openssl pkcs12 -export -out certificate.pfx -inkey private.key -in certificate.c
 
 
 2.**Doamin**
-```text
 - Domain là gì?
 Domain (tên miền) là địa chỉ định danh duy nhất của một website trên internet, giúp người dùng truy cập trang web dễ dàng thay vì nhập dãy số IP phức tạp.
 
