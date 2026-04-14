@@ -88,6 +88,7 @@ openssl pkcs12 -export -out certificate.pfx -inkey private.key -in certificate.c
 
 
 ###**Doamin**
+```text
 - Domain là gì?
 Domain (tên miền) là địa chỉ định danh duy nhất của một website trên internet, giúp người dùng truy cập trang web dễ dàng thay vì nhập dãy số IP phức tạp.
 
