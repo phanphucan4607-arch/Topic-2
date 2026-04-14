@@ -479,11 +479,54 @@ Lệnh: netstat -unl
    Sử dụng sort -k [số_cột] filename.txt.
 
     Ví dụ: sort -k 2 data.txt (sắp xếp dựa trên nội dung cột thứ 2).
-    <img width="666" height="467" alt="image" src="https://github.com/user-attachments/assets/f41b95cc-13e3-4a48-8a35-013f426d1e58" />
+<img width="666" height="467" alt="image" src="https://github.com/user-attachments/assets/33d01fd7-24ca-43ab-97b3-1c25f0439456" />
+
+
+## - Uniq Command:
+công cụ mạnh mẽ dùng để lọc, báo cáo hoặc loại bỏ các dòng lặp lại liền kề trong tệp văn bản. Lệnh này thường được kết hợp với sort để đạt hiệu quả cao nhất.
+
+   ### + Lọc các dòng lặp lại.
+   Để loại bỏ các dòng trùng lặp liền kề và chỉ giữ lại một dòng đại diện, bạn sử dụng lệnh uniq. 
+
+    Cú pháp: sort report.txt | uniq
+    Ví dụ: Nếu file report có các dòng trùng nhau, dùng lệnh sau để lọc:
     
+   ### + Lọc và đếm số lượng dòng lặp lại.
+   Để đếm số lần xuất hiện của mỗi dòng (kèm theo hiển thị dòng đó), sử dụng tùy chọn -c. 
+    Cú pháp: uniq -c [tệp_đầu_vào]
+    Ví dụ: 
+    <img width="412" height="176" alt="image" src="https://github.com/user-attachments/assets/08b7b994-296f-4cf8-976c-a4728cafe7ef" />
 
 
+    sort data.txt | uniq -c
+<img width="412" height="176" alt="image" src="https://github.com/user-attachments/assets/e8f1e566-bab2-4ecf-a19e-06626aaa851b" />
 
+Các tùy chọn phổ biến khác (theo Vietnix):
+
+    -d: Chỉ hiển thị các dòng trùng lặp (lọc ra các dòng xuất hiện > 1 lần).
+    -u: Chỉ hiển thị các dòng duy nhất (chỉ xuất hiện 1 lần).
+    -i: Bỏ qua phân biệt chữ hoa, chữ thường.
+    -f n: Bỏ qua
+    trường đầu tiên khi so sánh.
+
+## - Wc Command:
+à công cụ hiệu quả để đếm số dòng, từ và ký tự trong tệp. Các tùy chọn chính bao gồm -l để đếm số dòng và -m hoặc -c để đếm số ký tự/byte
+   ### + Đếm số dòng.
+   Sử dụng tùy chọn -l.
+    Cú pháp: wc -l tên_tệp
+    Ví dụ: wc -l file.txt (Hiển thị số dòng và tên tệp).
+    <img width="412" height="176" alt="image" src="https://github.com/user-attachments/assets/8a3b9316-0aa3-4473-aae9-a9759e3e500f" />
+
+   ### + Đếm số ký tự.
+   Sử dụng tùy chọn -m.
+    Cú pháp: wc -m tên_tệp
+    Ví dụ: wc -m file.txt (Hiển thị tổng số ký tự, bao gồm cả khoảng trắng và ký tự xuống dòng).
+<img width="363" height="183" alt="image" src="https://github.com/user-attachments/assets/a1f921ca-04da-4b60-8893-f98dca256c09" />
+
+## - Chmod, Chown, Chattr Command:
+   ### + Phân quyền bằng số và chữ.
+   ### + Đổi owner user/group.
+   ### + Set Immutable Attribute.
 
 
 
