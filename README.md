@@ -179,7 +179,6 @@ là hệ thống phân giải tên miền, giúp chuyển đổi các tên miề
 + Buoc 4: Tra ket qua ve trinh duyet: DNS Resolver gui dia chi IP ve cho trinh duyet. Trinh duyet su dung IP nay de thiet lap ket noi TCP/IP voi Web Server va hien thi noi dung website.
 ```
 # **Linux Command Line**
-```
 - Ping vietnix.vn và giải thích kết quả lệnh `ping` và `hping3`.
 <img width="696" height="269" alt="image" src="https://github.com/user-attachments/assets/f969870b-dbbe-473e-9ea3-f13669746eaf" />
 
